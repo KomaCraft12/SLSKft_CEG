@@ -21,6 +21,7 @@ class TaskController extends Controller
         $task->description = $request->description;
         $task->status = $request->status;
         $task->costumer_id = $request->costumer_id;
+        $task->workers()->sync($request->workers);
         $task->save();
         return response()->json($task);
     }
@@ -36,6 +37,7 @@ class TaskController extends Controller
         $task->name = $request->name;
         $task->description = $request->description;
         $task->status = $request->status;
+        $task->workers()->sync($request->workers);
         $task->save();
         return response()->json($task);
     }
