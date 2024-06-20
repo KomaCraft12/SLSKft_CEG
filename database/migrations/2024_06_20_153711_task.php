@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('status', 100);
             $table->string('gps_kordinata', 100);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('costumer_id')->references('id')->on('costumers');
         });
